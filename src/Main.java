@@ -49,7 +49,8 @@ public class Main {
 
     // Measure Merge Sort time
     startTime = System.currentTimeMillis();
-    mergeSort();
+    int[] arrayMergeSortAuxiliary = arrayMergeSort.clone();
+    mergeSort(arrayMergeSort, arrayMergeSortAuxiliary, 0, arraySize - 1);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -171,8 +172,36 @@ public class Main {
 		}
   }
 
-  private static void mergeSort() {
-    
+  private static void mergeSort(int[] array, int[] auxiliary, int start, int end) {
+    if (start < end) {
+      int middle = (start + end) / 2;
+
+      mergeSort(array, auxiliary, start, middle);
+
+      mergeSort(array, auxiliary, middle + 1, end);
+
+      int i = start, j = middle + 1, k = start;
+
+      while (i <= middle && j <= end) {
+        if (auxiliary[i] <= auxiliary[j]) {
+          array[k++] = auxiliary[i++];
+        } else {
+          array[k++] = auxiliary[j++];
+        }
+      }
+
+      while (i <= middle) {
+        array[k++] = auxiliary[i++];
+      }
+
+      while (j <= end) {
+        array[k++] = auxiliary[j++];
+      }
+
+      for (int p = start; p <= end; p++) {
+        auxiliary[p] = array[p];
+      }
+    }
   }
 
   private static void heapSort() {
