@@ -56,5 +56,5 @@ Fill in the execution times (in milliseconds or seconds, be consistent):
 | Merge Sort     |     0s 1ms     |     0s 0ms     |     0s 0ms      |     0s 2ms     |     0s 1ms     |     0s 2ms      |     0s 3ms       |     0s 2ms       |     0s 2ms        |     0s 9ms       |     0s 5ms       |     0s 5ms        | 
 | Heap Sort      |     0s 0ms     |     0s 0ms     |     0s 0ms      |     0s 2ms     |     0s 2ms     |     0s 2ms      |     0s 4ms       |     0s 3ms       |     0s 4ms        |     0s 8ms       |     0s 6ms       |     0s 6ms        |
 | Counting Sort  |     0s 0ms     |     0s 0ms     |     0s 0ms      |     0s 0ms     |     0s 1ms     |     0s 2ms      |     0s 1ms       |     0s 1ms       |     0s 1ms        |     0s 2ms       |     0s 2ms       |     0s 2ms        |
-| Quick Sort     |                |                |                 |                |                |                 |                  |                  |                   |                  |                  |                   |
+| Quick Sort     |     0s 0ms     |     0s 0ms     |     0s 0ms      |     0s 1ms     |     0s 1ms     |     0s 0ms      |     0s 2ms       |     0s 1ms       |     0s 1ms        |     0s 7ms       |     0s 6ms       |     0s 6ms        |
 

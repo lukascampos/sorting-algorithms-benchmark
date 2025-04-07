@@ -5,7 +5,7 @@ public class Main {
 
     int[] array = new int[arraySize];
 
-    initializeArray(array, arraySize, 2); // 0 - Random order, 1 - Sorted (ascending), 2 - Reverse order (descending)
+    initializeArray(array, arraySize, 1); // 0 - Random order, 1 - Sorted (ascending), 2 - Reverse order (descending)
 
     int[] arrayBubbleSort = array.clone();
     int[] arraySelectionSort = array.clone();
@@ -80,7 +80,7 @@ public class Main {
 
     // Measure Quick Sort time
     startTime = System.currentTimeMillis();
-    quicksort();
+    quicksort(arrayQuicksort, 0, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -279,7 +279,32 @@ public class Main {
     }
   }
 
-  private static void quicksort() {
-    
+  public static void quicksort(int array[], int begin, int end){
+    if (begin >= end - 1) return;
+
+    int i = begin;
+    int j = end - 1;
+    int pivot = array[begin + (end - begin) / 2];
+    int temp;
+
+    while (i <= j){
+      while (i < end && array[i] < pivot)
+        i++;
+      while (j >= begin && array[j] > pivot)
+        j--;
+
+      if (i <= j){
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+        i++;
+        j--;
+      }
+    }
+
+    if (begin < j)
+      quicksort(array, begin, j + 1);
+    if (i < end)
+      quicksort(array, i, end);
   }
 }
