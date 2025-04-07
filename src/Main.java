@@ -11,7 +11,7 @@ public class Main {
     int[] arraySelectionSort = array.clone();
     int[] arrayInsertionSort = array.clone();
     int[] arrayMergeSort = array.clone();
-    int[] arrayHeapSort2 = array.clone();
+    int[] arrayHeapSort = array.clone();
     int[] arrayCountingSort = array.clone();
     int[] arrayQuicksort = array.clone();
 
@@ -29,7 +29,7 @@ public class Main {
 
     // Measure Selection Sort time
     startTime = System.currentTimeMillis();
-    selectionSort();
+    selectionSort(arraySelectionSort, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -142,8 +142,19 @@ public class Main {
     }
   }
 
-  private static void selectionSort() {
-    
+  private static void selectionSort(int[] array, int size) {
+    for (int currentIndex = 0; currentIndex < size; ++currentIndex) {
+      int smallestIndex = currentIndex;
+      for (int nextIndex = currentIndex + 1; nextIndex < size; ++nextIndex) {
+        if (array[nextIndex] < array[smallestIndex]) {
+          smallestIndex = nextIndex;
+        }
+      }
+
+      int temp = array[currentIndex];
+      array[currentIndex] = array[smallestIndex];
+      array[smallestIndex] = temp;
+    }
   }
 
   private static void insertionSort() {
