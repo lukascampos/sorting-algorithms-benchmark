@@ -70,7 +70,7 @@ public class Main {
 
     // Measure Counting Sort time
     startTime = System.currentTimeMillis();
-    countingSort();
+    countingSort(arrayCountingSort, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -250,8 +250,33 @@ public class Main {
     }
   }
 
-  private static void countingSort() {
-    
+  public static void countingSort(int[] array, int size) {
+    int maxValue = array[0];
+    for (int i = 1; i < size; i++) {
+      if (array[i] > maxValue) {
+        maxValue = array[i];
+      }
+    }
+      
+    int[] c = new int[maxValue+1];
+    for (int i = 0; i < size; i++) {
+      c[array[i]] += 1;
+    }
+      
+
+    for (int i = 1; i < c.length; i++) {
+      c[i] += c[i-1];
+    }
+
+    int[] b = new int[size];
+    for (int i = b.length-1; i >= 0; i--) {
+      b[c[array[i]] -1] = array[i];
+      c[array[i]]--;
+    }
+
+    for (int i = 0; i < size; i++) {
+      array[i] = b[i];
+    }
   }
 
   private static void quicksort() {
