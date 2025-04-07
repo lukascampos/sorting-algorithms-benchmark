@@ -60,7 +60,7 @@ public class Main {
 
     // Measure Heap Sort time
     startTime = System.currentTimeMillis();
-    heapSort();
+    heapSort(arrayHeapSort, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -204,8 +204,50 @@ public class Main {
     }
   }
 
-  private static void heapSort() {
-    
+  public static void heapSort(int[] array, int size) {
+    for (int i = size / 2 - 1; i >= 0; i--) {
+      int parent = i;
+      int temp = array[parent];
+      int child = 2 * parent + 1;
+
+      while (child < size) {
+        if (child + 1 < size && array[child + 1] > array[child]) {
+          child++;
+        }
+        if (array[child] > temp) {
+          array[parent] = array[child];
+          parent = child;
+          child = 2 * parent + 1;
+        } else {
+          break;
+        }
+      }
+      array[parent] = temp;
+    }
+
+    for (int i = size - 1; i > 0; i--) {
+      int temp = array[0];
+      array[0] = array[i];
+      array[i] = temp;
+
+      int parent = 0;
+      temp = array[parent];
+      int child = 2 * parent + 1;
+
+      while (child < i) {
+        if (child + 1 < i && array[child + 1] > array[child]) {
+          child++;
+        }
+        if (array[child] > temp) {
+          array[parent] = array[child];
+          parent = child;
+          child = 2 * parent + 1;
+        } else {
+          break;
+        }
+      }
+      array[parent] = temp;
+    }
   }
 
   private static void countingSort() {
