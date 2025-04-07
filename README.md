@@ -50,7 +50,7 @@ Fill in the execution times (in milliseconds or seconds, be consistent):
 
 | Algorithm       | 1,000 (Random) | 1,000 (Sorted) | 1,000 (Reverse) | 5,000 (Random) | 5,000 (Sorted) | 5,000 (Reverse) | 10,000 (Random) | 10,000 (Sorted) | 10,000 (Reverse) | 30,000 (Random) | 30,000 (Sorted) | 30,000 (Reverse) |
 |----------------|----------------|----------------|-----------------|----------------|----------------|-----------------|------------------|------------------|-------------------|------------------|------------------|-------------------|
-| Bubble Sort    |                |                |                 |                |                |                 |                  |                  |                   |                  |                  |                   |
+| Bubble Sort    |     0s 3ms     |     0s 3ms     |     0s 3ms      |     0s 28ms    |     0s 9ms     |     0s 13ms     |     0s 109ms     |     0s 22ms      |     0s 32ms       |     1s 108ms     |     0s 147ms     |     0s 257ms      |
 | Selection Sort |                |                |                 |                |                |                 |                  |                  |                   |                  |                  |                   |
 | Insertion Sort |                |                |                 |                |                |                 |                  |                  |                   |                  |                  |                   |
 | Merge Sort     |                |                |                 |                |                |                 |                  |                  |                   |                  |                  |                   |

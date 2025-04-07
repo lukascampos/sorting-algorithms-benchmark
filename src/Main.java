@@ -1,11 +1,11 @@
 public class Main {
   public static void main(String[] args) {
 
-    int arraySize = 5000000;
+    int arraySize = 30000;
 
     int[] array = new int[arraySize];
 
-    initializeArray(array, arraySize, 0); // 0 - Random order, 1 - Sorted (ascending), 2 - Reverse order (descending)
+    initializeArray(array, arraySize, 2); // 0 - Random order, 1 - Sorted (ascending), 2 - Reverse order (descending)
 
     int[] arrayBubbleSort = array.clone();
     int[] arraySelectionSort = array.clone();
@@ -19,7 +19,7 @@ public class Main {
 
     // Measure Bubble Sort time
     startTime = System.currentTimeMillis();
-    bubbleSort(array, arraySize);
+    bubbleSort(arrayBubbleSort, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -102,13 +102,13 @@ public class Main {
       }
       break;
     case 1: // Sorted in ascending order
-    for (int i = 0; i < size; i++) {
+      for (int i = 0; i < size; i++) {
         array[i] = i + 1;
-    }
+      }
       break;
     case 2: // Sorted in descending order
-      for (int i = size; i > 0; i--) {
-        array[i - 1] = i;
+      for (int i = 0; i < size; i++) {
+        array[i] = size - i;
       }
       break;
     }
@@ -130,8 +130,16 @@ public class Main {
     System.out.println();
   }
 
-  private static void bubbleSort(int[] vet, int N) {
-    
+  private static void bubbleSort(int[] array, int N) {
+    for (int pass = 0; pass < N - 1; pass++) {
+      for (int i = 0; i < N - pass - 1; i++) {
+        if (array[i] > array[i + 1]) {
+          int temp = array[i];
+          array[i] = array[i + 1];
+          array[i + 1] = temp;
+        }
+      }
+    }
   }
 
   private static void selectionSort() {
