@@ -39,7 +39,7 @@ public class Main {
 
     // Measure Insertion Sort time
     startTime = System.currentTimeMillis();
-    insertionSort();
+    insertionSort(arrayInsertionSort, arraySize);
     endTime = System.currentTimeMillis();
 
     elapsedSeconds = (endTime - startTime) / 1000;
@@ -157,8 +157,18 @@ public class Main {
     }
   }
 
-  private static void insertionSort() {
-    
+  private static void insertionSort(int[] array, int size) {
+    for (int i = 1; i < size; i++){
+			int aux = array[i];
+			int j = i;
+			
+			while ((j > 0) && (array[j-1] > aux)){
+				array[j] = array[j-1];
+				j -= 1;
+			}
+
+			array[j] = aux;
+		}
   }
 
   private static void mergeSort() {
