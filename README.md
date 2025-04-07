@@ -58,6 +58,4 @@ Fill in the execution times (in milliseconds or seconds, be consistent):
 | Counting Sort  |     0s 0ms     |     0s 0ms     |     0s 0ms      |     0s 0ms     |     0s 1ms     |     0s 2ms      |     0s 1ms       |     0s 1ms       |     0s 1ms        |     0s 2ms       |     0s 2ms       |     0s 2ms        |
 | Quick Sort     |     0s 0ms     |     0s 0ms     |     0s 0ms      |     0s 1ms     |     0s 1ms     |     0s 0ms      |     0s 2ms       |     0s 1ms       |     0s 1ms        |     0s 7ms       |     0s 6ms       |     0s 6ms        |
 
-## 📊 Results Table
-
 ![Sorting Performance Chart](./sorting-performance-chart.png)
